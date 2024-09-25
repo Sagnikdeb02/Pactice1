@@ -56,6 +56,73 @@ fun HomePage(
                 Text(text = "Image View",fontSize = 16.sp, color = Color.White)
             }
         }
+        Spacer(modifier = Modifier.padding(16.dp))
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.Center,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Button(
+                onClick = {
+                    navController.navigate("checkbox")
+                },
+                colors = ButtonDefaults.buttonColors(Color.Red),
+                modifier = Modifier.height(50.dp),
+                shape = RoundedCornerShape(16.dp)
+            ) {
+                Text(text = "CheckBox",fontSize = 16.sp, color = Color.White)
+            }
+            Spacer(modifier = Modifier.padding(16.dp))
+            Button(
+                onClick = {
+                    navController.navigate("radiobutton")
+                },
+                colors = ButtonDefaults.buttonColors(Color.Red),
+                modifier = Modifier.height(50.dp),
+                shape = RoundedCornerShape(16.dp)
+            ) {
+                Text(text = "RadioButton",fontSize = 16.sp, color = Color.White)
+            }
+        }
+        Spacer(modifier = Modifier.padding(16.dp))
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.Center,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Button(
+                onClick = {
+                    navController.navigate("ratingbar")
+                },
+                colors = ButtonDefaults.buttonColors(Color.Red),
+                modifier = Modifier.height(50.dp),
+                shape = RoundedCornerShape(16.dp)
+            ) {
+                Text(text = "RatingBar",fontSize = 16.sp, color = Color.White)
+            }
+            Spacer(modifier = Modifier.padding(16.dp))
+            Button(
+                onClick = {
+                    navController.navigate("seekbar")
+                },
+                colors = ButtonDefaults.buttonColors(Color.Red),
+                modifier = Modifier.height(50.dp),
+                shape = RoundedCornerShape(16.dp)
+            ) {
+                Text(text = "SeekBarView",fontSize = 16.sp, color = Color.White)
+            }
+        }
+        Spacer(modifier = Modifier.padding(16.dp))
+        Button(
+            onClick = {
+                navController.navigate("switch")
+            },
+            colors = ButtonDefaults.buttonColors(Color.Red),
+            modifier = Modifier.height(50.dp),
+            shape = RoundedCornerShape(16.dp)
+        ) {
+            Text(text = "SwitchView",fontSize = 16.sp, color = Color.White)
+        }
     }
 }
 

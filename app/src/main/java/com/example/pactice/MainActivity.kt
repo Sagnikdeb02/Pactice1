@@ -12,8 +12,8 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.pactice.ui.theme.Imageview
 import com.example.pactice.ui.theme.PacticeTheme
+import com.example.pactice.ui.theme.SwitchView
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,6 +32,11 @@ class MainActivity : ComponentActivity() {
                         composable("home") { HomePage(navController) }
                         composable("imageView") { Imageview() }
                         composable("textView") { Textview() }
+                        composable("checkbox"){ CheckboxView() }
+                        composable("radiobutton"){ RadioButtonView() }
+                        composable("ratingbar") { RatingBarView() }
+                        composable("seekbar") { SeekBarView() }
+                        composable("switch") { SwitchView() }
                     }
                 }
             }

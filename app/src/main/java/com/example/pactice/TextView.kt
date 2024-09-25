@@ -24,9 +24,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import android.widget.Toast
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.draw.clip
 
 @Composable
 fun Textview() {
+    val context = LocalContext.current
     var out by remember { mutableStateOf("Press a button") }
     var textFieldColor by remember { mutableStateOf(Color.White) }
 
@@ -43,23 +47,26 @@ fun Textview() {
                 onClick = {
                     out = "Red button has clicked"
                     textFieldColor = Color.Red
+                    Toast.makeText(context, "Red button has clicked", Toast.LENGTH_SHORT).show()
                 },
                 colors = ButtonDefaults.buttonColors(Color.Red),
-                modifier = Modifier.size( height = 50.dp, width = 100.dp),
+                modifier = Modifier.size(height = 50.dp, width = 100.dp),
                 shape = RoundedCornerShape(16.dp)
             ) {
-                Text(text = "Red",fontSize = 16.sp, color = Color.White)
+                Text(text = "Red", fontSize = 16.sp, color = Color.White)
             }
             Spacer(modifier = Modifier.padding(horizontal = 16.dp))
             Button(
                 onClick = {
                     out = "Green button has clicked"
-                    textFieldColor = Color.Green      },
+                    textFieldColor = Color.Green
+                    Toast.makeText(context, "Green button has clicked", Toast.LENGTH_SHORT).show()
+                },
                 colors = ButtonDefaults.buttonColors(Color.Green),
-                modifier = Modifier.size( height = 50.dp, width = 100.dp),
+                modifier = Modifier.size(height = 50.dp, width = 100.dp),
                 shape = RoundedCornerShape(16.dp)
             ) {
-                Text(text = "Green",fontSize = 16.sp, color = Color.White)
+                Text(text = "Green", fontSize = 16.sp, color = Color.White)
             }
         }
         Spacer(modifier = Modifier.padding(16.dp))
@@ -68,19 +75,22 @@ fun Textview() {
             onValueChange = {},
             shape = RoundedCornerShape(16.dp),
             readOnly = true,
-            modifier = Modifier.background(textFieldColor, RoundedCornerShape(16.dp))
+            modifier = Modifier
+                .background(textFieldColor, RoundedCornerShape(16.dp))
+                .clip(RoundedCornerShape(16.dp))
         )
         Spacer(modifier = Modifier.padding(16.dp))
         Button(
             onClick = {
                 out = "Press a button"
                 textFieldColor = Color.White
+                Toast.makeText(context, "Clean button has clicked", Toast.LENGTH_SHORT).show()
             },
             colors = ButtonDefaults.buttonColors(Color.Gray),
-            modifier = Modifier.size( height = 50.dp, width = 100.dp),
+            modifier = Modifier.size(height = 50.dp, width = 100.dp),
             shape = RoundedCornerShape(16.dp)
         ) {
-            Text(text = "Clean",fontSize = 16.sp, color = Color.White)
+            Text(text = "Clean", fontSize = 16.sp, color = Color.White)
         }
     }
 }
