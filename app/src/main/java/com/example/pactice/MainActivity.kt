@@ -27,8 +27,9 @@ class MainActivity : ComponentActivity() {
 
                     NavHost(
                         navController = navController,
-                        startDestination = "home"
+                        startDestination = "login"
                     ) {
+                        composable("login"){ LoginPage(navController)}
                         composable("home") { HomePage(navController) }
                         composable("imageView") { Imageview() }
                         composable("textView") { Textview() }
@@ -37,6 +38,8 @@ class MainActivity : ComponentActivity() {
                         composable("ratingbar") { RatingBarView() }
                         composable("seekbar") { SeekBarView() }
                         composable("switch") { SwitchView() }
+                        composable("custom") { CustomListView() }
+                        composable("expandable") { ExpandableListView() }
                     }
                 }
             }

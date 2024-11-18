@@ -113,6 +113,34 @@ fun HomePage(
             }
         }
         Spacer(modifier = Modifier.padding(16.dp))
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.Center,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Button(
+                onClick = {
+                    navController.navigate("custom")
+                },
+                colors = ButtonDefaults.buttonColors(Color.Red),
+                modifier = Modifier.height(50.dp),
+                shape = RoundedCornerShape(16.dp)
+            ) {
+                Text(text = "CustomList",fontSize = 16.sp, color = Color.White)
+            }
+            Spacer(modifier = Modifier.padding(16.dp))
+            Button(
+                onClick = {
+                    navController.navigate("expandable")
+                },
+                colors = ButtonDefaults.buttonColors(Color.Red),
+                modifier = Modifier.height(50.dp),
+                shape = RoundedCornerShape(16.dp)
+            ) {
+                Text(text = "Expandable",fontSize = 16.sp, color = Color.White)
+            }
+        }
+        Spacer(modifier = Modifier.padding(16.dp))
         Button(
             onClick = {
                 navController.navigate("switch")
